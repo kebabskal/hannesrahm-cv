@@ -1,0 +1,213 @@
+/*
+	Den här filen är super-rörig, tyvärr.
+	Jobbar generellt med SCSS, vilket gör det betydligt enklare att strukturera sånnt här på ett vettigt sätt.
+*/ 
+
+html, body {
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #444;
+}
+
+.header {
+	position: relative;
+	width: 100%;
+	height: 400px;
+	background: transparent url(/img/header-bg.svg) center;
+	background-size: auto 400px;
+	text-align: center;
+}
+
+.contact {
+	position: absolute;
+	left: 50%;
+	top: 200px; 
+	margin-left: -300px;
+}
+
+a { display: block; }
+
+a.email { color: #FF8000; text-decoration: none; font-weight: bold; }
+a.phone { color: #444 !important; text-decoration: none; }
+
+.face {
+	position: absolute;
+	left: 50%;
+	background: transparent url(/img/face.svg) center no-repeat;
+	margin-left: -100px;
+	width: 200px;
+	height: 400px;
+}
+
+.hello-world {
+	position: absolute;
+	left: 50%;
+	background: transparent url(/img/hello-world.svg) center no-repeat;
+	margin-left: 120px;
+	width: 200px;
+	height: 400px;
+}
+
+p {
+	margin: 1em auto;
+	max-width: 500px;
+	line-height: 160%;
+}
+
+.orange { color: #ff8000; }
+
+.mission {
+	font-weight: 800;
+}
+
+.mission em { font-weight: normal; }
+
+.section {
+
+}
+
+.section h2 {
+	text-transform: uppercase;
+	text-align: center;
+}
+
+h3 { text-transform: uppercase; }
+
+.about { padding: 40px; }
+
+.knowledge {
+	background: #FF8000;
+	color: #fff;
+	padding: 40px;
+}
+
+.knowledge .areas {
+	display: flex;
+	justify-content: center;
+}
+
+@media screen and (max-width: 700px) {
+	.knowledge .areas {
+		flex-direction: column;
+	}
+}
+
+.knowledge .areas .area {
+	flex: 1;
+	max-width: 210px;
+}
+
+.knowledge .areas .area ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.experience { padding: 40px; }
+
+.timeline {
+	display: flex;
+	padding: 100px;
+	margin-top: 100px;
+}
+
+.timeline .event {
+	position: relative;
+	background: #fff;
+}
+
+.timeline .event .line {
+	position: absolute;
+	left: 10px;
+	right: 15px;
+	border-bottom: dotted 2px #444;
+	margin-top: 1px;
+}
+
+.timeline .event.single .line {
+	display: none;
+}
+
+.timeline .event .point {
+	left: -20px;
+	position: relative;
+	transform: rotate(-90deg);
+	width: 1em;
+}
+
+.timeline .event .start { text-align: right; position: absolute; top: 0; right: 25px; }
+.timeline .event .dot { 
+	position: absolute;
+	top: 5px;
+	left: 0;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: #444;
+	border: solid 10px #fff;
+	margin-left: -10px;
+	margin-top: -10px;
+	cursor: pointer;
+}
+.timeline .event .dot:hover {
+	background: #FF8000;
+}
+.timeline .event .title { position: absolute; top: 0; left: 20px; }
+
+
+.tooltip {
+	position: absolute;
+	bottom: 12px;
+	left: -120px;
+	width: 200px;
+	background: #FF8000;
+	z-index: 999;
+	padding: 20px;
+	color: #fff;
+	opacity: 1;
+	transition: opacity 1250ms;
+	pointer-events: none;
+}
+
+.tooltip.ng-hide {
+	opacity: 0;
+}
+
+.tooltip:after {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 50%;
+	bottom: -20px;
+	margin-left: -12px;
+	width: 0px;
+	border: solid 10px transparent;
+	border-top: solid 10px #FF8000;
+}
+
+.tooltip strong { 
+	text-transform: uppercase;
+}
+
+.tooltip ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+stars {
+	margin: 5px;
+}
+
+stars .star {
+	display: inline-block;
+	width: 0.8em;
+	height: 0.8em;
+	background: transparent url(/star.svg) no-repeat;
+	opacity: 0.07;
+}
+
+stars .star.active {
+	opacity: 0.4;
+}
