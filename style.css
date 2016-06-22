@@ -34,6 +34,19 @@ a.pdf { display: block; position: fixed; right: 20px; top: 20px; }
 a.pdf img { width: 60px; opacity: 1; height: 60px; transition: opacity 200ms, width 200ms, height 200ms; }
 a.pdf:hover img { width: 65px; height: 65px; opacity: 0.8;}
 
+@media screen and (max-width: 700px) {
+	.contact { 
+		position: relative;
+		left: 0;
+		top: 0;
+		margin-left: 0;
+		text-align: center;
+	}
+
+	.hello-world { display: none; }
+}
+
+
 .face {
 	position: absolute;
 	left: 50%;
@@ -109,10 +122,21 @@ h3 { text-transform: uppercase; }
 
 .experience { padding: 40px; }
 
-.timeline {
+.timeline.desktop {
 	display: flex;
 	padding: 100px;
 	margin-top: 50px;
+}
+
+.timeline.mobile {
+	display: none;
+	padding: 20px;
+	margin-top: 50px;
+}
+
+@media screen and (max-width: 700px) {
+	.timeline.mobile { display: block; }
+	.timeline.desktop { display: none; }
 }
 
 .timeline .event {

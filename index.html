@@ -2,6 +2,7 @@
 <!-- Hej och välkommen! -->
 <html lang="sv">
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="format-detection" content="telephone=no">
 	<title>Hannes Rahm - Curriculum Vitae</title>
 	<link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -12,13 +13,13 @@
 </head>
 <body ng-app="cvApp" ng-controller="cvController">
 	<div class="section header">
-		<div class="contact">
-			<a class="email" href="mailto:me@hannesrahm.com">me@hannesrahm.com</a>
-			<a class="phone" href="tel:0703-31 52 13">0703-31 52 13</a>
-		</div>
 		<div class="face"></div>
 		<div class="hello-world"></div>
 		<a class="pdf" href="hannesrahm-cv.pdf"><img src="img/pdf.svg" /></a></div>
+	</div>
+	<div class="contact">
+		<a class="email" href="mailto:me@hannesrahm.com">me@hannesrahm.com</a>
+		<a class="phone" href="tel:0703-31 52 13">0703-31 52 13</a>
 	</div>
 	<div class="section about">
 		<h2>Om mig, <span class="orange">Hannes Rahm</span></h2>
@@ -80,7 +81,7 @@
 	</div>
 	<div class="section experience">
 		<h2>Erfarenhet</h2>
-		<div class="timeline">
+		<div class="timeline desktop">
 			<div 
 				ng-repeat="event in experience"
 				class="event"
@@ -100,6 +101,20 @@
 					<div class="dot" ng-mouseover="event.hover=true" ng-mouseout="event.hover=false"></div>
 					<div class="title">{{event.title}}</div>
 				</div>
+			</div>
+		</div>
+		<div class="timeline mobile">
+			<div 
+				ng-repeat="event in experience | orderBy: $index:true"
+			>
+				
+				<strong>{{event.long}}</strong><br />
+				<i>{{event.start}} - {{event.end}}</i>
+
+				<ul>
+					<li ng-repeat="item in event.tooltip">{{item}}</li>
+				</ul>
+				
 			</div>
 		</div>
 	</div>
