@@ -30,6 +30,9 @@ a { display: block; }
 
 a.email { color: #FF8000; text-decoration: none; font-weight: bold; }
 a.phone { color: #444 !important; text-decoration: none; }
+a.pdf { display: block; position: fixed; right: 20px; top: 20px; }
+a.pdf img { width: 60px; opacity: 1; height: 60px; transition: opacity 200ms, width 200ms, height 200ms; }
+a.pdf:hover img { width: 65px; height: 65px; opacity: 0.8;}
 
 .face {
 	position: absolute;
@@ -109,7 +112,7 @@ h3 { text-transform: uppercase; }
 .timeline {
 	display: flex;
 	padding: 100px;
-	margin-top: 100px;
+	margin-top: 50px;
 }
 
 .timeline .event {
